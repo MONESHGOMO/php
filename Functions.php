@@ -110,4 +110,103 @@ $num3 = 28;
 $solution = maxOfThreeNumbers($num1, $num2, $num3);
 print ($solution . " " ."is the max of all three numbers ");
 
-?>          
+
+// Write a function that checks if a string is a palindrome (same forward and backward).
+
+function palindromeOfAString($givenName){
+
+    $name = $givenName;
+    $revName = "";
+    
+    $length = strlen($name)-1;
+    
+    for ($i = $length; $i >= 0;$i--){
+        $revName =$revName. $name[$i];
+    }
+    
+    if($name == $revName){
+        return "It is a palindrome";
+    }
+    else{
+        return "it is not a palindrome";
+    }
+}
+
+$StringSolution = palindromeOfAString("gomo");
+print ($StringSolution);
+
+
+// Create a function that counts vowels in a string.
+
+function countOfVowels($givenString){
+
+    $count = 0;
+    $userGivenString = strtolower($givenString);
+
+    $vowels = ['a', 'e', 'i', 'o', 'u'];
+
+    for ($i = 0; $i <strlen($userGivenString); $i++) {
+        if(in_array($userGivenString[$i],$vowels)){
+            $count++;
+        }
+    }
+
+    return $count;
+
+}
+
+$countMatch = countOfVowels("education");
+print ($countMatch);
+
+
+// Write a function that takes an array of numbers and returns the average.
+
+function averageInArray($givenArray){
+
+    $sum = 0;
+    $divisor = count($givenArray);
+
+    for ($i = 0; $i < $divisor; $i++) {
+        $sum = $sum + $givenArray[$i];
+    }
+
+    return $sum / $divisor;
+}
+
+$array = [1, 2, 3, 4, 5];
+print (averageInArray($array));
+
+// Create a function that reverses a string without using built-in strrev().
+
+function reverseA_String($givenString){
+
+    $name = $givenString;
+    $revName = "";
+
+    $length = strlen($name) - 1;
+
+    for ($i = $length; $i >= 0; $i--) {
+        $revName = $revName . $name[$i];
+    }
+
+    return $revName;
+}
+
+print (reverseA_String("moni"));
+
+// Make a function that returns the factorial of a number
+
+function factorialOfANumber($givenNumber)
+{
+    $result = 1;
+
+    for ($i = 1; $i <= $givenNumber; $i++) {
+        $result *= $i;
+    }
+
+    return $result;
+}
+
+print(factorialOfANumber(5)); 
+
+    ?>          
