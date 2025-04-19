@@ -209,4 +209,86 @@ function factorialOfANumber($givenNumber)
 
 print(factorialOfANumber(5)); 
 
-    ?>          
+// Write a function that generates a unique invoice number using date and a random number.
+
+function generateInvoiceNumber(){
+    $date = date("Ymd");
+    $generate_RandValue = rand(1000, 9999);
+    $InvoiceNumber = "INV-{$date}-{$generate_RandValue}";
+
+    return $InvoiceNumber;
+}
+
+echo generateInvoiceNumber();
+
+// Create a function that validates an email address.
+
+function checkEmail($userEmailID){
+    
+    if(filter_var($userEmailID,FILTER_VALIDATE_EMAIL)){
+        return "VALID EMAIL";
+    }
+    else{
+        return "INVALID EMAIL FORMAT";
+    }
+}
+function checkEmail_2($email){
+
+    if (!preg_match("/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/", $email)) {
+        return "Invalid email format";
+    }
+    else{
+        return "valid email, you are good to go...";
+    }
+
+
+}
+
+print (checkEmail("gomo@gmail.com").'<br>');
+print (checkEmail("gomo@com.gmail").'<br>');
+
+print (checkEmail_2("gomo@gmail.com") . '<br>');
+print (checkEmail_2("gomo@com.gmail") . '<br>');
+
+function currencyFormat($givenAmount){
+
+    $amount = number_format($givenAmount, 2); // 2 indicate the no. of decimal values we want
+    return '$'.$amount;
+}
+
+print (currencyFormat(3153.2342).'<br>');
+print (currencyFormat(35784.2342) . '<br>');
+
+// Create a function that takes a full name and returns only the initials.
+
+function getInitial($firstName,$secondName){
+
+    $array = [$firstName, $secondName];
+    $len = count($array) ;
+    $initial = "";
+    for($i=0;$i<$len;$i++){
+       $initial.=strtoupper( $array[$i][0]);
+    }
+
+    return $initial;
+}
+
+print (getInitial("Mike", "Tyson").'<br>');
+print (getInitial("Tyson", "Mike").'<br>');
+
+// Write a function that returns the number of days between two dates.
+
+function getDaysBetweenDates($date1, $date2)
+{
+    $date1 = new DateTime($date1);
+    $date2 = new DateTime($date2);
+
+    $interval = $date1->diff($date2);
+
+    return $interval->days;
+}
+
+print getDaysBetweenDates("2025-04-01", "2025-04-20");  
+
+
+?>          
