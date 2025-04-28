@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" name="name" value="<?= $user['email'] ?>" id="name">
+    <input type="text" class="form-control" name="name" value="<?= $user['name'] ?>" id="name">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
